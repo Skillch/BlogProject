@@ -14,8 +14,10 @@ body {
 text-align: center;
 }
 .container__posts{
+	padding: 10px calc(50% - 870px);
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(5, 1fr);
+	gap: 20px;
 }
 .post{
 	border:  1px solid;

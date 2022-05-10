@@ -6,7 +6,7 @@ const Catalog = () => {
             <h1>Блог</h1>
              
                 
-                 <Main />
+                 {/* <Main /> */}
             </>
     )
 }
