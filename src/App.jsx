@@ -7,30 +7,26 @@ import Preheader from "./components/Preheader";
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
 import Cart from "./pages/Cart";
+import Post from "./components/Post";
 
 
 const App = () => {
+    const [searchText, changeText] = useState("");
+
     return (
         <div className="container">
             <Header />
             <Preheader />
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home search={searchText} changeText={changeText}/>} />
+                <Route path="/post/:id" element={<Post />}/>
                 <Route path="/catalog" element={<Catalog  />}/>
                 <Route path="/cart" element={<Cart />} />
-                </Routes>
-            {/* <Card /> */}
-            {/* {dataCards} */}
-            
+            </Routes>          
             <Footer />
         </div>
     )
 }
 
-    export default App;
-// export default () => {
-    
-//     return <>
-//         <h1>Hello React!</h1>
-//     </>
-// }
+export default App;
+
