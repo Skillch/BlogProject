@@ -1,25 +1,41 @@
 import React, {useState, useEffect} from "react";
-import "../index.css"
-const Home = () => {
-    
-        const [posts,getPosts] = useState([]);
-        useEffect(() => {
-           
-                fetch("https://api.react-learning.ru/posts", {
-                    headers: {
-                        authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjcyYWM4Y2ZkOTcyNTA2OTFhZGU1OGQiLCJpYXQiOjE2NTE2ODMxNzEsImV4cCI6MTY4MzIxOTE3MX0.QQJX5-wGjKoAiCDQlTeE194zu1ey01YdzCnrHHAdQLg`
-                    }
-                })
-                .then(res => res.json())
-                .then(ans => {
-                    getPosts(ans);
-                })
-            
-        }, []);
-        return( <>
-            <h1 className="H1">Мои посты:</h1>
+import api from "../Api";
+import Search from "../components/Search/index";
+import { Link } from "react-router-dom";
+import "../index.css";
+
+const Home = ({search, changeText}) => {
+    const [posts, getPosts] = useState([]);
+    const [cards, updateCards] = useState(posts);
+
+    useEffect(() => {
+        api.getPostList().then(ans =>{
+            getPosts(ans);
+        })
+    }, []);
+
+    useEffect(() => {
+        updateCards(posts.filter(el => el.title.toLowerCase().includes(search.toLowerCase())));
+    }, [posts, search]);
+       
+
+    return(
+        <>
+            <div className="container__h1">
+                <h1 className="h1">Мои посты:</h1>
+                <Search text={search} foo={changeText}/>
+                {search && <div className='search__item'>По запросу <strong>{search}</strong> найдено {cards.length} постов</div>}
+            </div>
             <div className="container__posts">   
-            {posts.map((post,i) => <div key={i} className="post"><img className="imgpost" src={post.image}/><span className="textpost">{post.title}</span><span className="text__description">{post.text}</span></div>)}
+                {cards.map((post,i) => 
+                    <Link to={"/post/" + post._id} key={post._id}>
+                        <div key={i} className="post">
+                            <img className="imgpost" src={post.image}/>
+                            <span className="textpost">{post.title}</span>
+                            <span className="text__description">{post.text}</span>
+                        </div>
+                    </Link>
+                    )}
             </div>
         </>
     )
