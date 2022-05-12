@@ -5,26 +5,34 @@ import Header from "./components/Header";
 import Preheader from "./components/Preheader";
 
 import Home from "./pages/Home";
-import Catalog from "./pages/Catalog";
-import Cart from "./pages/Cart";
+import Favorites from "./pages/Favorites";
+import Profile from "./pages/Profile";
 import Post from "./components/Post";
+import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
+
+import { UserCtx, UserValue } from "./components/Context/UserContext";
 
 
 const App = () => {
     const [searchText, changeText] = useState("");
 
     return (
-        <div className="container">
-            <Header />
-            <Preheader />
-            <Routes>
-                <Route path="/" element={<Home search={searchText} changeText={changeText}/>} />
-                <Route path="/post/:id" element={<Post />}/>
-                <Route path="/catalog" element={<Catalog  />}/>
-                <Route path="/cart" element={<Cart />} />
-            </Routes>          
-            <Footer />
-        </div>
+        <UserCtx.Provider value={UserValue}>
+            <div className="container">
+                <Header />
+                <Preheader />
+                <Routes>
+                    <Route path="/" element={<Home search={searchText} changeText={changeText}/>} />
+                    <Route path="/post/:id" element={<Post/>}/>
+                    <Route path="/favorites" element={<Favorites/>}/>
+                    <Route path="/profile" element={<Profile/>} />
+                    <Route path="/signin" element={<Signin/>} />
+                    <Route path="/signup" element={<Signup/>} />
+                </Routes>          
+                <Footer />
+            </div>
+        </UserCtx.Provider>
     )
 }
 
