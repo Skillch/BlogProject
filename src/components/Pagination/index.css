@@ -1,0 +1,10 @@
+.page-item {
+    margin: 0;
+    padding: 3px;
+    display: inline;
+}
+.page-link {
+    margin-right: 5px;
+    border: 1px solid #000;
+    padding: 3px;
+}
