@@ -49,7 +49,7 @@ const Home = ({search, changeText}) => {
                     )}
 
                 </div>
-                <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
+                <Pagination currentPage={currentPage} postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
             </div>
         </>
     )
