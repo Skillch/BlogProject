@@ -7,7 +7,6 @@ import { UserCtx } from "../Context/UserContext";
 export default ({login}) => {
     const [val, changeVal] = useState("");
     const [pwd, changePwd] = useState("");
-
     const { setUser, setToken } = useContext(UserCtx);
     const navigation = useNavigate();
 

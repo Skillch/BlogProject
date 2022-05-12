@@ -2,8 +2,10 @@ import React, {useState, useEffect} from "react";
 import api from "../Api";
 import Search from "../components/Search/index";
 import { Link } from "react-router-dom";
+import Card from "../components/Card";
 import "../index.css";
 import Pagination from "../components/Pagination";
+
 
 const Home = ({search, changeText}) => {
     const [posts, getPosts] = useState([]);
@@ -40,11 +42,7 @@ const Home = ({search, changeText}) => {
                 <div className="container__posts">   
                     {currentPost.map((post,i) => 
                         <Link to={"/post/" + post._id} key={post._id}>
-                            <div key={i} className="post">
-                                <img className="imgpost" src={post.image}/>
-                                <span className="textpost">{post.title}</span>
-                                <span className="text__description">{post.text}</span>
-                            </div>
+                            <Card key={post._id} data={{...post}}/>
                         </Link>
                     )}
 

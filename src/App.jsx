@@ -16,9 +16,20 @@ import { UserCtx, UserValue } from "./components/Context/UserContext";
 
 const App = () => {
     const [searchText, changeText] = useState("");
+    const [user, setUser] = useState(localStorage.getItem("user") || "");
+    const [token, setToken] = useState(localStorage.getItem("token") || "");
+
+    const userHandler = (id) => {
+        setUser(id);
+        localStorage.setItem("user", id);
+    }
+    const tokenHandler = (data) => {
+        setToken(data);
+        localStorage.setItem("token", data);
+    }
 
     return (
-        <UserCtx.Provider value={UserValue}>
+        <UserCtx.Provider value={{token: token, user: user, setToken: tokenHandler, setUser: userHandler}}>
             <div className="container">
                 <Header />
                 <Preheader />

@@ -20,7 +20,7 @@ const Header = () => {
                 <Link to="/favorites">
                     <img src={icFav} alt="Избранное"/>
                 </Link>
-                <Link to={user ? "/profile" : "/signin"}>
+                <Link to={user ? "/Profile" : "/Signin"}>
                     <img src={icProf} alt="Войти в личный кабинет"/>
                 </Link>
             </nav>
