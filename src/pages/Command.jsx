@@ -20,14 +20,14 @@ const Cart = () => {
   </div>
   <h3>Виктория Илларионова</h3>
   <p className="role2">Frontend developer</p>
-  <p>Кратко по теме этого админа.</p></div>
+  <p>Добавила апи, поиск, пагинацию, авторизацию, лайки.</p></div>
   <div className="volupavum">
   <div className="vumkob-salovum">
   <img src="https://dist.edu-frn.spb.ru/pluginfile.php/1762/course/summary/21%20youbgtreacher.png" alt="Ключевое слово под изображение" />
   </div>
   <h3>Анастасия Батусова</h3>
   <p className="role">Frontend developer</p>
-  <p>Путеводитель по интернет ресурсу.</p>
+  <p>Добавила и оформила страницу одного поста.</p>
   </div>
   </div>
 </div>
