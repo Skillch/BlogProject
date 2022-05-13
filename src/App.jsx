@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Preheader from "./components/Preheader";
 
 import Home from "./pages/Home";
-import Addpost from "./pages/Addpost";
+import Catalog from "./pages/Catalog";
 import Cart from "./pages/Cart";
 import Post from "./components/Post";
 
@@ -20,7 +20,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Home search={searchText} changeText={changeText}/>} />
                 <Route path="/post/:id" element={<Post />}/>
-                <Route path="/addpost" element={<Addpost  />}/>
+                <Route path="/catalog" element={<Catalog  />}/>
                 <Route path="/cart" element={<Cart />} />
             </Routes>          
             <Footer />

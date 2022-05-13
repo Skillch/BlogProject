@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import api from "../../Api";
 import "./index.css";
+import iconUpd from "./img/pen-solid.svg";
 
 const Post = () => {
     let {id} = useParams();
@@ -16,10 +17,15 @@ const Post = () => {
     }, []);
 
     return (
-        <>
-            <h2>{post.title || "No name"}</h2>
+        <><div className="cards">
+        <div className="card"><img className="imgOnePost" src={post.image}/>
+        </div>
+        <div className="card">
+            <h3>{post.title || "Отсутствует"}<button className="upd" onClick="updateRow(this)" data-tooltip="Редактировать"><img src={iconUpd}/></button></h3>
             <p>{id}</p>
-            <p>{}</p>
+            <p>{post.text || "Отсутствует"}</p>
+            </div>
+            </div>
         </>
     )
 };

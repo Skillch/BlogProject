@@ -9,9 +9,9 @@ const Header = () => {
             
             <nav>
                 <Link to="/">Главная</Link>
-                <Link to="/addpost">Добавить пост</Link>
-                <Link to="/cart">Команда</Link>
-                {/* <Link to="/cart">Контакты</Link> */}
+                <Link to="/catalog">Блог</Link>
+                <Link to="/cart">Обо мне</Link>
+                <Link to="/cart">Контакты</Link>
             </nav>
         </header>
     )
