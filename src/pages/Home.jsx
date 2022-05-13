@@ -12,11 +12,11 @@ const Home = ({search, changeText}) => {
     const [cards, updateCards] = useState(posts);
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(10);
+    const [postsPerPage] = useState(20);
 
     useEffect(() => {
         api.getPostList().then(ans =>{
-            getPosts(ans);
+            getPosts(ans.reverse());
         })
     }, []);
 

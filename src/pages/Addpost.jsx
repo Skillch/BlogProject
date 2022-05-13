@@ -10,6 +10,7 @@ export default ({update}) => {
         e.preventDefault();
         setTitle("");
         setText("");
+        setImg("");
         let token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjcyYWM4Y2ZkOTcyNTA2OTFhZGU1OGQiLCJpYXQiOjE2NTE2ODMxNzEsImV4cCI6MTY4MzIxOTE3MX0.QQJX5-wGjKoAiCDQlTeE194zu1ey01YdzCnrHHAdQLg";
         let body = {
             "title": title,
