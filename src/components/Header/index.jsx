@@ -14,9 +14,8 @@ const Header = ({likes}) => {
         <header>
             <nav>
                 <Link to="/">Главная</Link>
-                <Link to="/">Блог</Link>
-                <Link to="/">Обо мне</Link>
-                <Link to="/">Контакты</Link>
+                <Link to="/addpost">Добавить пост</Link>
+                <Link to="/cart">Команда</Link>
                 <Link to="/favorites">
                     <img src={icFav} alt="Избранное"/>
                     <span className="like">{likes}</span> 

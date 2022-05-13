@@ -10,6 +10,8 @@ import Profile from "./pages/Profile";
 import Post from "./components/Post";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
+import Addpost from "./pages/Addpost";
+import Cart from "./pages/Command";
 
 import { UserCtx, UserValue } from "./components/Context/UserContext";
 import { FavCtx } from "./components/Context/FavContext";
@@ -50,6 +52,8 @@ const App = () => {
                     <Routes>
                         <Route path="/" element={<Home search={searchText} changeText={changeText}/>} />
                         <Route path="/post/:id" element={<Post/>}/>
+                        <Route path="/addpost" element={<Addpost />}/>
+                        <Route path="/cart" element={<Cart />}/>
                         <Route path="/favorites" element={<Favorites/>}/>
                         <Route path="/profile" element={<Profile/>} />
                         <Route path="/signin" element={<Signin/>} />
