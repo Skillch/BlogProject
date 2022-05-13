@@ -17,7 +17,7 @@ const Home = () => {
             
         }, []);
         return( <>
-            <h1 className="H1">Мои посты!!!!!!</h1>
+            <h1 className="H1">Мои посты:</h1>
             <div className="container__posts">   
             {posts.map((post,i) => <div key={i} className="post"><img className="imgpost" src={post.image}/><span className="textpost">{post.title}</span><span className="text__description">{post.text}</span></div>)}
             </div>
