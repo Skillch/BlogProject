@@ -9,9 +9,9 @@ const Footer = () => {
                 <p className="copyright">&copy;2022</p>
             </div>
             <ul>
-                <li><a href="">Главная</a></li>
-                <li><a href="">Блог</a></li>
-                <li><a href="">Обо мне</a></li>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/addpost">Добавить пост</a></li>
+                <li><a href="/cart">Команда</a></li>
                 <li><a href="">Контакты</a></li>
             </ul>
             <ul>
