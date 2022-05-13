@@ -1,0 +1,27 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    justify-content: center; 
+    width: 1000px;  
+}
+input {
+    background-color: rgba(163, 163, 198, 0.2);
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    border-radius: 15px;
+    
+}
+.search-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

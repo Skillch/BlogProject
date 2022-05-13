@@ -1,25 +1,56 @@
 import React, {useState, useEffect} from "react";
-import "../index.css"
-const Home = () => {
+import api from "../Api";
+import Search from "../components/Search/index";
+import Card from "../components/Card";
+import "../index.css";
+import Pagination from "../components/Pagination";
+
+
+const Home = ({search, changeText}) => {
+    const [posts, getPosts] = useState([]);
+    const [cards, updateCards] = useState(posts);
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [firstPostIndex, setfPI] = useState(1);
+    const [lastPostIndex, setlPI] = useState(1);
+    const [postsPerPage] = useState( search ||20);
+
+    useEffect(() => {
+        api.getPostList().then(ans =>{
+            getPosts(ans.reverse());
+        })
+    }, []);
+
+    useEffect(() => {
+        updateCards(posts.filter(el => el.title.toLowerCase().includes(search.toLowerCase())));
+    }, [posts, search]);
     
-        const [posts,getPosts] = useState([]);
-        useEffect(() => {
-           
-                fetch("https://api.react-learning.ru/posts", {
-                    headers: {
-                        authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjcyYWM4Y2ZkOTcyNTA2OTFhZGU1OGQiLCJpYXQiOjE2NTE2ODMxNzEsImV4cCI6MTY4MzIxOTE3MX0.QQJX5-wGjKoAiCDQlTeE194zu1ey01YdzCnrHHAdQLg`
-                    }
-                })
-                .then(res => res.json())
-                .then(ans => {
-                    getPosts(ans);
-                })
-            
-        }, []);
-        return( <>
-            <h1 className="H1">Мои посты:</h1>
-            <div className="container__posts">   
-            {posts.map((post,i) => <div key={i} className="post"><img className="imgpost" src={post.image}/><span className="textpost">{post.title}</span><span className="text__description">{post.text}</span></div>)}
+    useEffect(() => {
+        setlPI(currentPage * postsPerPage);
+        setfPI(lastPostIndex - postsPerPage);
+    })
+    
+    const currentPost = cards.slice(firstPostIndex, lastPostIndex);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber)
+       
+
+    return(
+        <>
+            <div className="parentContainer">
+                <div className="container__h1">
+                        <h1 className="h1">Мои посты:</h1>
+                        <Search text={search} foo={changeText}/>
+                        {search && <div className='search__item'>По запросу <strong>{search}</strong> найдено {cards.length} постов</div>}
+                </div>
+                <div className="container__posts">   
+                    {currentPost.map((post) => 
+                        // <Link to={"/post/" + post._id} key={post._id}>
+                            <Card key={post._id} data={{...post}}/>
+                        // </Link>
+                    )}
+                </div>
+                <Pagination currentPage={currentPage} postsPerPage={postsPerPage} totalPosts={cards.length} paginate={paginate}/>
             </div>
         </>
     )

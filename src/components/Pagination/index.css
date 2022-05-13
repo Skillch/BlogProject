@@ -1,0 +1,15 @@
+.page__item {
+    margin: 0;
+    /* padding: 3px; */
+    display: inline;
+}
+.page__link {
+    margin-right: 1px;
+    border: 1px solid rgb(145, 145, 145);
+    border-radius: 2px;
+    padding: 3px;
+}
+.page__current{
+    border: 2px solid orange;
+    font-weight: bold;
+}
