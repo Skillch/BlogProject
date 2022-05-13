@@ -35,9 +35,9 @@ const Home = ({search, changeText}) => {
         <>
             <div className="parentContainer">
                 <div className="container__h1">
-                    <h1 className="h1">Мои посты:</h1>
-                    <Search text={search} foo={changeText}/>
-                    {search && <div className='search__item'>По запросу <strong>{search}</strong> найдено {cards.length} постов</div>}
+                        <h1 className="h1">Мои посты:</h1>
+                        <Search text={search} foo={changeText}/>
+                        {search && <div className='search__item'>По запросу <strong>{search}</strong> найдено {cards.length} постов</div>}
                 </div>
                 <div className="container__posts">   
                     {currentPost.map((post) => 

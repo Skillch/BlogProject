@@ -7,7 +7,7 @@ import icProf from "../../assets/user-solid.svg"
 import { UserCtx } from "../Context/UserContext";
 
 
-const Header = () => {
+const Header = ({likes}) => {
     const {user} = useContext(UserCtx);
 
     return(
@@ -19,6 +19,7 @@ const Header = () => {
                 <Link to="/">Контакты</Link>
                 <Link to="/favorites">
                     <img src={icFav} alt="Избранное"/>
+                    <span className="like">{likes}</span> 
                 </Link>
                 <Link to={user ? "/Profile" : "/Signin"}>
                     <img src={icProf} alt="Войти в личный кабинет"/>

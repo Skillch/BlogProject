@@ -10,7 +10,7 @@ form.auth {
     /* background-color: #ffe44d; */
     padding: 30px;
 }
-button {
+.btn {
     min-width: 200px;
     background-color: #fff;
     border: 1px solid rgb(158, 158, 158);

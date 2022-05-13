@@ -1,7 +1,7 @@
 header{
     padding: 10px calc(50% - 496px);
     color: white;
-    background-color: #000000;
+    background-color: #706d6d;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,4 +18,7 @@ a{
 }
 nav img {
     height: 19px;
+}
+.like {
+    color: aliceblue;
 }

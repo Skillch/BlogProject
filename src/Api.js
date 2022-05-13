@@ -21,6 +21,14 @@ class Api {
             }
         }).then(responseHandler);
     }
+    setPostLike(id, isLike) {
+        return fetch(`${this.path}/posts/likes/${id}`, {
+            method: isLike ? "DELETE" : "PUT",
+            headers: {
+                "authorization": `Bearer ${this.token}`
+            }
+        }).then(responseHandler);
+    }
     signup(body) {
         return fetch(`${this.path}/signup`, {
             method: "post",
@@ -43,7 +51,7 @@ class Api {
 
 const config = {
     path: "https://api.react-learning.ru",
-    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjcyYWM4Y2ZkOTcyNTA2OTFhZGU1OGQiLCJpYXQiOjE2NTE2ODMxNzEsImV4cCI6MTY4MzIxOTE3MX0.QQJX5-wGjKoAiCDQlTeE194zu1ey01YdzCnrHHAdQLg"
+    token: localStorage.getItem("token")
 }
 
 const api = new Api(config);
