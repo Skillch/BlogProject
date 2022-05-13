@@ -51,7 +51,7 @@ class Api {
 
 const config = {
     path: "https://api.react-learning.ru",
-    token: localStorage.getItem("token")
+    token: localStorage.getItem("token") || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjcyYWM4YWZkOTcyNTA2OTFhZGU1OGMiLCJpYXQiOjE2NTI0NTc4MjYsImV4cCI6MTY4Mzk5MzgyNn0.btMVIi3oZyae6hsWUMTUdoHDiF7aYayOvDtmKypA0QU"
 }
 
 const api = new Api(config);
