@@ -40,7 +40,7 @@ const Home = ({search, changeText}) => {
                         {search && <div className='search__item'>По запросу <strong>{search}</strong> найдено {cards.length} постов</div>}
                 </div>
                 <div className="container__posts">   
-                    {currentPost.map((post) => 
+                    {currentPost.map((post, i) => 
                         // <Link to={"/post/" + post._id} key={post._id}>
                             <Card key={post._id} data={{...post}}/>
                         // </Link>
