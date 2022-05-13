@@ -78,14 +78,14 @@ body {
 	margin-left: 40%;
 }
 textarea {
-	background-color: rgba(255, 255, 255, 0.7);
+	background-color: rgba(255, 255, 255);
     border: none;
     outline: none;
     padding: 12px 20px;
     border-radius: 5px;
     resize: vertical;
 	height: 160px;
-	
+	border: 1px solid #0000005a;
 }
 .btn__addpost {
 	display: inline-block;
@@ -127,25 +127,27 @@ padding-top: 20px;
 color: #000000;
 }
 .input__Post{
+border: 1px solid #0000005a;
 border-radius: 5px;
-background-color: rgba(255, 255, 255, 0.7);
+background-color: rgba(255, 255, 255, 1);
 }
 .fon__body{
-	background-image:url(https://png.pngtree.com/thumb_back/fw800/background/20201016/pngtree-wood-plank-background-log-texture-background-image_417865.jpg);
-	/* background-repeat: no-repeat;
-	background-size: cover; */
+	display: flex;
+	flex-direction: column;
+	background-image: url(https://basic.vpluseteam.ru/wp-content/uploads/2017/01/landscape1.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
 .kadupis-decung{
-	background-color: #81c644;
+	/* background-color: #81c644; */
 	margin-top: 0px;
-	
 }
 .h1__komanda{
-	background-color: #81c644;
+	/* background-color: #81c644; */
 	margin-top: 0;
 }
 .kadupis-decung h1{
-	font-family: 'Allura', cursive;
+	/* font-family: 'Allura', cursive; */
 	font-size: 52px;
 	margin-bottom: 100px;
 	text-align: center;
@@ -160,13 +162,15 @@ background-color: rgba(255, 255, 255, 0.7);
 }
   
 .cumconevu .volupavum {
+	border: 1px solid #00000043;
+	border-radius: 10px;
 	background: #fdfafa;
 	margin: 4px;
 	margin-bottom: 50px;
 	width: 315px;
 	padding: 18px;
 	line-height: 20px;
-	color: #888dad;
+	color: #212224;
 	position: relative;
 }
   
