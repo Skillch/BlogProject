@@ -1,11 +1,11 @@
 import React from "react";
-const Catalog = () => {
+
+export default () => {
     return (
         <>
-            <h1>Блог</h1>
+            <h1>Избранное</h1>
             
         </>
     )
 }
 
-export default Catalog;
