@@ -8,12 +8,12 @@ import { useNavigate } from "react-router-dom";
 const Card = (props) => {
     const [like, setLike] = useState(false);
     const navigate = useNavigate();
-    // const likeHandler = (e) => {
-    //     e.stopPropagation();
-    //     setLike(!like);
-    // }
-    const replaceHandler = (e) => {
-        navigate(`/product/${e._id}`);
+    const likeHandler = (e) => {
+        e.stopPropagation();
+        setLike(!like);
+    }
+    const replaceHandler = (el) => {
+        navigate(`/post/${props.data._id}`);
     }
 
     return (
@@ -22,7 +22,7 @@ const Card = (props) => {
             <span className="textpost">{props.data.title}</span>
             <span className="text__description">{props.data.text}</span>
             <img className="text__like" src={like ? likeTrue : likeFalse}
-            //  onClick={likeHandler}
+             onClick={likeHandler}
              />
         </div>
         
