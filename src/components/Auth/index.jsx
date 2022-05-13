@@ -18,8 +18,10 @@ export default ({login}) => {
                 if (ans.data) {
                     setUser(ans.data._id);
                     setToken(ans.token);
+                    localStorage.setItem("user", ans.data._id);
+                    localStorage.setItem("token", ans.token);
                 }
-                navigation("/");
+                navigation("/profile");
             })
         } else {
             console.log(val);

@@ -11,6 +11,8 @@ export default () => {
         localStorage.removeItem("user");
         localStorage.removeItem("token");
         navigate("/");
+        setToken("");
+        setUser("");
     }
 
     return ( 

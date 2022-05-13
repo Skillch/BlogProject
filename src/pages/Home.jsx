@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import api from "../Api";
 import Search from "../components/Search/index";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import "../index.css";
 import Pagination from "../components/Pagination";
@@ -40,12 +40,11 @@ const Home = ({search, changeText}) => {
                     {search && <div className='search__item'>По запросу <strong>{search}</strong> найдено {cards.length} постов</div>}
                 </div>
                 <div className="container__posts">   
-                    {currentPost.map((post,i) => 
-                        <Link to={"/post/" + post._id} key={post._id}>
+                    {currentPost.map((post) => 
+                        // <Link to={"/post/" + post._id} key={post._id}>
                             <Card key={post._id} data={{...post}}/>
-                        </Link>
+                        // </Link>
                     )}
-
                 </div>
                 <Pagination currentPage={currentPage} postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
             </div>

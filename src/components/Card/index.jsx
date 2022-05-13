@@ -1,25 +1,29 @@
-import React from "react";
+import React, { useState }  from "react";
 import "../../index.css";
+import likeTrue from "../../assets/like_fill copy.svg";
+import likeFalse from "../../assets/like_stroke copy.svg";
+import { useNavigate } from "react-router-dom";
+
 
 const Card = (props) => {
-    let CardImg = {
-        backgroundImage: `url(${props.data.image})`,
-        // backgroundSize: "contain",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundColor: "#fff",
-        marginBottom: "20px"
-    };
+    const [like, setLike] = useState(false);
+    const navigate = useNavigate();
+    // const likeHandler = (e) => {
+    //     e.stopPropagation();
+    //     setLike(!like);
+    // }
+    const replaceHandler = (e) => {
+        navigate(`/product/${e._id}`);
+    }
 
     return (
-        <div className="post">
+        <div className="post" onClick={replaceHandler}>
             <img className="imgpost" src={props.data.image}/>
             <span className="textpost">{props.data.title}</span>
             <span className="text__description">{props.data.text}</span>
-            {/* <div className="card__img" style={CardImg}></div>
-            <div className="card__date">{props.data.created_at}</div>
-            <div className="card__title">{props.data.title}</div>
-            <div className="card__author">{props.data.author.name}</div> */}
+            <img className="text__like" src={like ? likeTrue : likeFalse}
+            //  onClick={likeHandler}
+             />
         </div>
         
     )
