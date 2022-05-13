@@ -3,18 +3,57 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin: 5px 0 5px 0;
-	padding: 0;
+	padding: 20px 0 35px 0;
+    background-image: url(https://basic.vpluseteam.ru/wp-content/uploads/2017/01/landscape1.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
 form.auth {
     /* background-color: #ffe44d; */
     padding: 30px;
 }
-.btn {
+/* .btn {
     min-width: 200px;
     background-color: #fff;
     border: 1px solid rgb(158, 158, 158);
     border-radius: 5px;
     margin: 0;
     padding: 5px;
+} */
+input {
+    border: 1px solid #0000005a;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 1);
+}
+.btn {
+	display: inline-block;
+	width: 200px;
+	box-sizing: border-box;
+	padding: 0 24px;
+	/* margin-left:100px; */
+	outline: none;
+	border: none;
+	border-radius: 3px;
+	height: 37px;
+	line-height: 37px;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: normal;
+	text-decoration: none;
+	color: #fff;
+	background-color: #05cd51;
+	cursor: pointer;
+	user-select: none;
+	appearance: none;
+	touch-action: manipulation;
+	transition: box-shadow .18s ease-out,background .18s ease-out,color .18s ease-out;
+}
+.btn:focus-visible {
+	box-shadow: 0 0 0 3px lightskyblue;
+}
+.btn:hover {
+	box-shadow: 0 1px 1px 0  #cfcfcf, 0 2px 5px 0  #cfcfcf;
+}
+.btn:active {
+	background-color: #058c38 !important;
 }
