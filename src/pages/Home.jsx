@@ -11,7 +11,8 @@ const Home = ({search, changeText}) => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
-
+    
+    
     useEffect(() => {
         api.getPostList().then(ans =>{
             getPosts(ans);
@@ -27,7 +28,6 @@ const Home = ({search, changeText}) => {
     const currentPost = posts.slice(firstPostIndex, lastPostIndex);
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber)
-       
 
     return(
         <>
@@ -51,7 +51,7 @@ const Home = ({search, changeText}) => {
                 </div>
                 <Pagination currentPage={currentPage} postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
             </div>
-        </>   
+        </>
     )
 }
 
