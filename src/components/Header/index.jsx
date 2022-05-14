@@ -16,10 +16,10 @@ const Header = ({likes}) => {
                 <Link to="/">Главная</Link>
                 <Link to="/addpost">Добавить пост</Link>
                 <Link to="/cart">Команда</Link>
-                <Link to="/favorites">
+                {/* <Link to="/favorites">
                     <img src={icFav} alt="Избранное"/>
                     <span className="like">{likes}</span> 
-                </Link>
+                </Link> */}
                 <Link to={user ? "/Profile" : "/Signin"}>
                     <img src={icProf} alt="Войти в личный кабинет"/>
                 </Link>
